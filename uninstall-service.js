@@ -11,6 +11,7 @@ var svc = new Service({
 svc.on('uninstall', function() {
   console.log('Uninstall complete.');
   console.log('The service exists:', svc.exists);
+  process.exit();
 });
 
 // 서비스를 해제합니다.
