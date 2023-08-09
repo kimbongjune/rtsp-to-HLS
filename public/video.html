@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RTSP to HLS Streaming</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+<script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+<body>
+  <button id="start-stream">Start Streaming</button>
+  <video controls autoplay id="video-player">
+    <!-- Stream will be loaded here -->
+  </video>
+
+  <script>
+    const path = window.location.pathname.split('/')[1];
+    document.querySelector('#start-stream').addEventListener('click', async () => {
+        
+        const { data } = await axios.get(`http://localhost:3000/stream/${path}`);
+        console.log(data)
+        if (data.status === 'streaming') {
+          
+          const player = videojs('video-player');
+            
+          player.ready(function() {
+              const playerInstance = this;
+              playerInstance.src({
+                  src: `http://localhost:3000/${path}/stream.m3u8`,
+                  type: 'application/x-mpegURL'
+              });
+              
+              playerInstance.play();
+          });
+        }
+    });
+  </script>
+</body>
+</html>
