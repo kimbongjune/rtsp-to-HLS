@@ -8,7 +8,7 @@ Nodejs에서 ffmpeg를 이용하여 rtsp 프로토콜의 영상을 HLS로 변환
   - [프로세스](#-프로세스)
   - [사용 기술](#-사용-기술)
   - [개발환경](#-개발환경)
-  - [설치 및 실행 가이드 문서](#️-설치-및-실행-가이드-문서)
+  - [설치 및 실행 가이드 문서](#️설치-및-실행-가이드-문서)
 <br><br>
 
 ## 📜 프로젝트 개요
@@ -43,6 +43,6 @@ Nodejs에서 ffmpeg를 이용하여 rtsp 프로토콜의 영상을 HLS로 변환
 - GPU : Intel(R) UHD Graphics 750(인텔 내장 GPU)
 <br><br>
 
-## 설치 및 실행 가이드 문서
+## 📙 설치 및 실행 가이드 문서
 - [20230809_RTSP to HLS 서버 설치 가이드문서.pdf](https://github.com/kimbongjune/rtsp-to-HLS/files/12327313/20230809_RTSP.to.HLS.pdf)
 
